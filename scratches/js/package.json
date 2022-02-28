@@ -1,0 +1,44 @@
+{
+  "private": true,
+  "description": "Code snippets from the Crafting JavaScript book.",
+  "author": "Kieran Potts <hello@kieranpotts.com> (https://kieranpotts.com/)",
+  "license": "MIT",
+  "engines": {
+    "node": ">=13.3.0",
+    "yarn": ">=1.21.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/plugin-proposal-private-methods": "^7.4.4",
+    "@babel/plugin-transform-classes": "^7.4.4",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-flow": "^7.9.0",
+    "babel-eslint": "^10.0.1",
+    "chai": "^4.2.0",
+    "eslint": "^5.16.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.17.3",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-promise": "^4.1.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "esm": "^3.2.25",
+    "flow-bin": "^0.122.0",
+    "fs-extra": "^7.0.1",
+    "mocha": "^6.1.4",
+    "rollup": "^1.13.1",
+    "rollup-plugin-babel": "^4.3.2",
+    "rollup-plugin-license": "^0.9.0",
+    "rollup-plugin-uglify": "^6.0.2"
+  },
+  "scripts": {
+    "clean": "node ./run/clean.js",
+    "build": "npm run build:iife & npm run build:cjs",
+    "build:iife": "node ./run/build/iife.js",
+    "build:cjs": "node ./run/build/cjs.js",
+    "flow": "flow",
+    "lint": "eslint \"./src/**/[^_]*.js\" \"./test/**/[^_]*.spec.js\"",
+    "lint:fix": "eslint \"./src/**/[^_]*.js\" \"./test/**/[^_]*.spec.js\" --fix",
+    "test": "mocha --recursive \"./test/**/[^_]*.spec.js\" --require esm"
+  }
+}

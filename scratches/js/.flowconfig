@@ -1,0 +1,14 @@
+[ignore]
+.*/dist/.*
+.*/run/.*
+
+[include]
+
+[libs]
+
+[lints]
+
+[options]
+suppress_comment= \\(.\\|\n\\)*\\@flow-ignore
+
+[strict]

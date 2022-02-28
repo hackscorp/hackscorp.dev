@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Test Code</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <style>
+      img {
+        max-width: 100%;
+      }
+      </style>
+  </head>
+  <body>
+    <figure>
+      <picture>
+        <source media="(min-width: 800px)"
+               srcset="img/large.png,
+                       img/large@2x.png 2x" />
+        <source media="(min-width: 400px)"
+               srcset="img/medium.png,
+                       img/medium@2x.png 2x" />
+        <img alt="Image description."
+             src="img/default.png"
+          srcset="img/default@2x.png 2x" />
+      </picture>
+      <figcaption>Optional caption for the image.</figcaption>
+    </figure>
+  </body>
+</html>
