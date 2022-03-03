@@ -41,6 +41,17 @@ Reference lists MUST be formatted like this:
   by Jeffrey Zeldman (2018)
 ```
 
+The Hacks Engineering Guide is a perpetual work-in-progress. At any one time, many sections will be incomplete or out-of-date. Authors may leave `TODO` lists at the bottom of any Markdown file, which MUST be formatted as follows:
+
+```md
+-----
+
+## TODO
+
+- [ ] Provide guidance on writing issues for different purposes (eg features vs bugs)
+- [ ] Document how issues should be tagged
+```
+
 ## Credits
 
 The following resources were influential in the design of our engineering process. Other reference resources are linked throughout the Hacks Engineering Guide.
