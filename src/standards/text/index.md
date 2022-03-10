@@ -1,0 +1,1 @@
+# Standards for text content
