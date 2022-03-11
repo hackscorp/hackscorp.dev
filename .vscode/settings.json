@@ -4,7 +4,7 @@
 
   // Markdownlint rules. We use the default linting ruleset with some tweaks.
   //
-  // @see <//github.com/DavidAnson/vscode-markdownlint#markdownlintconfig>
+  // @ref <//github.com/DavidAnson/vscode-markdownlint#markdownlintconfig>
 
   "markdownlint.config": {
     "default": true,
@@ -14,15 +14,18 @@
     // $ mkdir test
     // $ ls
     // ```
-    // @see <//github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md#md014>
+    // @ref <//github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md#md014>
+
     "MD014": false,
 
     // Allow additional spaces after ordered/unordered list markers.
-    // @see <//github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md#md030>
+    // @ref <//github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md#md030>
+
     "MD030": false,
 
     // The first line of a Markdown file MAY not be a heading.
-    // @see <//github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md#md041>
+    // @ref <//github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md#md041>
+
     "MD041": false,
   },
 
@@ -54,6 +57,7 @@
     "hackscorp",
     "hacksinc",
     "nirvarnia",
+    "parsable",
     "styleguide",
     "stylesheet",
     "transcompilation",
