@@ -1,11 +1,26 @@
 {
-  "editor.rulers": [],
+  // Transform tabs to two spaces.
   "editor.tabSize": 2,
 
-  // Markdownlint rules. We use the default linting ruleset with some tweaks.
-  //
-  // @ref <//github.com/DavidAnson/vscode-markdownlint#markdownlintconfig>
+  // Render vertical rulers at 80, 100 and 120 columns. Code lines SHOULD be
+  // less than 80 characters long. JSDoc comments MAY go up to the 100 ruler.
+  // No source files SHOULD have lines longer than 120 characters, but even
+  // this is not a hard limit.
+  "editor.rulers": [80, 100, 120],
 
+  // Lines will wrap at the edge of the editor area.
+  "editor.wordWrap": "on",
+
+  // There is no maximum line length for Markdown files. In the editor, lines
+  // wrap themselves after 80 characters.
+  "[markdown]":{
+    "editor.rulers": [],
+    "editor.wordWrap": "bounded",
+    "editor.wordWrapColumn": 80,
+  },
+
+  // Markdownlint rules. We use the default linting ruleset with some tweaks.
+  // https://github.com/DavidAnson/vscode-markdownlint#markdownlintconfig
   "markdownlint.config": {
     "default": true,
 
@@ -14,28 +29,23 @@
     // $ mkdir test
     // $ ls
     // ```
-    // @ref <//github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md#md014>
-
+    // https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md#md014
     "MD014": false,
 
     // Allow additional spaces after ordered/unordered list markers.
-    // @ref <//github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md#md030>
-
+    // https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md#md030
     "MD030": false,
 
     // The first line of a Markdown file MAY not be a heading.
-    // @ref <//github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md#md041>
-
+    // https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md#md041
     "MD041": false,
   },
 
 
   // Spell check language.
-
   "cSpell.language": "en-GB",
 
   // File paths to not spell check.
-
   "cSpell.ignorePaths": [
     ".git",
     ".vscode",
@@ -44,16 +54,16 @@
 
   // Enable/disable spelling errors on compound words like
   // 'errormessage' and 'builddir'. This setting makes the cSpell
-  // spell check unreliable and we should delimit words in code,
+  // spell check unreliable and so we must delimit words in code,
   // eg 'errorMessage` or `build_dir`.
-
   "cSpell.allowCompoundWords": false,
 
   // A list of words to be considered correct spellings.
-
   "cSpell.words": [
     "datatracker",
     "dialog",
+    "docblocks",
+    "Documentor",
     "hackscorp",
     "hacksinc",
     "nirvarnia",
@@ -68,15 +78,28 @@
 
   // Spellings to always ignore. These are not real words, but appear in domain
   // names, URL slugs, and other identifiers in source code or comments.
-
   "cSpell.ignoreWords": [],
 
   // Spellings always considered incorrect.
   // This is useful for common spelling errors.
   // For example, "hte" should be "the".
-
   "cSpell.flagWords": [
     "hte"
   ],
+
+  // Enable/disable VSCode's built-in JavaScript validation system.
+  "javascript.validate.enable": true,
+
+  // Enable the TypeScript type checker in all JavaScript files by default.
+  // This is equivalent to writing `@ts-check` in a comment at the top of all
+  // JavaScript files. JSDoc notations will be used to gather additional
+  // type information.
+  "js/ts.implicitProjectConfig.checkJs": false,
+
+  // Configuration for the ToDo Tree extension. We use only `TODO` notations.
+  // https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree
+  "todo-tree.general.tags": [
+    "TODO",
+  ]
 
 }
