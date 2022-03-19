@@ -1,19 +1,44 @@
 # Types
 
-The data types held by variables are declared using the `@type` flag.
+Type information is provided via the `@type`, `@param` and `@returns` tags, with a little help from `@typedef` and `@callback`.
 
-```js
-/** 
- * @type {string}
- */
-let s
-```
+Types are written in curly braces. Examples:
 
-Anything that gets exported from a module MUST have its type(s) defined using the `@type` tag. In addition, it is RECOMMENDED that authors declare types for all variables that are used only internally within a module. Doing so will improve the accuracy with which type checking tools can verify the correctness of a component's internal logic.
+- `{string}` - A string value.
+- `{number}` - A number value.
+- `{boolean}` - True or false.
+- `{null}` - A null value.
+- `{42}` - The literal number primitive 42.
+- `{'close' | 'open'}` - One of the literal string values 'close' and 'open'.
+- `{string[]}` - An array of string values.
+- `{string[][]}` - A two-dimensional array of string values.
+- `{...string}` - A variable number of string arguments.
+- `{NirvarniaElement}` - A custom type.
 
-Authors SHOULD include descriptions of variables where their purpose is not immediately obvious.
+JavaScript's primitive types are written full lower case:
 
-As well as JavaScript primitives (`string`, `number`, etc), types can also be host-specific built-in objects, such as `window` or `HTMLElement` in web browsers.
+- `boolean`
+- `number`
+- `string`
+- `undefined`
+- `null`
+
+For functions that return `undefined`, we tend to declare the return type as `void`. This is a TypeScript-specific type that is meant to be used in the specific context of functions that have no `return` statement.
+
+Note that `string` is a different type to `String`. But since JavaScript engines implicitly coerce primitive types to their equivalent object-oriented containers, and vice versa, the distinction is often immaterial. Prefer to declare string, number and boolean types as primitives (`string`, `number` and `boolean`) rather than as their object wrapper types (`String`, `Number`, `Boolean`).
+
+Any built-in JavaScript object, including `Error` types, is supported. Examples:
+
+- `Object`
+- `RegExp`
+- `Function`
+- `Array`
+- `Arguments`
+- `Date`
+- `Error`
+- `TypeError`
+
+And you can use any host-specific types, such as `window` or `HTMLElement` in applications that target runtime environments with access to a DOM.
 
 ```js
 /** 
@@ -23,7 +48,9 @@ const el = document.querySelector(selector)
 el.dataset.myData = ''
 ```
 
-Union types are defined like this:
+## Union types
+
+Variables that may reference more than one type MUST have their full range of possible types declared using union syntax.
 
 ```js
 /** 
@@ -31,30 +58,19 @@ Union types are defined like this:
  */
 ```
 
-Array types can be specified using a variety of syntaxes. We choose the following syntax, because it is the syntax most commonly used to define arrays in TypeScript itself.
+Union syntax is also used to declare nullable types.
 
 ```js
-/** 
- * @type {string[]} 
+/**
+ * @type {number | null}
  */
 ```
 
-```js
-/** 
- * @type {(string | number)[]} 
- */
-```
+Place one space either side of the pipe `|` character, for better readability and consistency with TypeScript notation.
 
-Promises MUST be defined with the type(s) of the values they resolve to.
+## Objects
 
-```js
-/** 
- * @type {Promise<string>} 
- */
-const promisedString
-```
-
-Objects SHOULD be fully typed. For simple data structures, the preferred type definition style is TypeScript syntax, like this:
+Objects SHOULD be fully typed. For simple data structures, the preferred type declaration style is TypeScript syntax, like this:
 
 ```js
 /** 
@@ -62,7 +78,23 @@ Objects SHOULD be fully typed. For simple data structures, the preferred type de
  */
 ```
 
-Map-like objects SHOULD be defined using the following TyepScript syntax. In this example, the object would map arbitrary `string` values (the object properties) to `number` values.
+Optional properties MAY be specified using TypeScript `?` notation.
+
+```js
+/** 
+ * @type {{ a: string, b?: number }} 
+ */
+```
+
+This is equivalent to:
+
+```js
+/** 
+ * @type {{ a: string, b: number | undefined }} 
+ */
+```
+
+Map-like objects SHOULD be declared using the following TypeScript syntax. In this example, the object would map arbitrary `string` values (the object properties) to `number` values.
 
 ```js
 /** 
@@ -70,7 +102,7 @@ Map-like objects SHOULD be defined using the following TyepScript syntax. In thi
  */
 ```
 
-Array-like maps, which map numbers to another value, SHOULD also be defined using the equivalent TypeScript syntax:
+Array-like maps, which map numbers to another value, SHOULD also be declared using the equivalent TypeScript syntax:
 
 ```js
 /** 
@@ -78,7 +110,50 @@ Array-like maps, which map numbers to another value, SHOULD also be defined usin
  */
 ```
 
-Where variables reference `Function` instances, the signatures of those functions MUST be defined. For functions with concise APIs, this is best done using TypeScript syntax:
+For more complex data structures, you will need to use `@typedef` [type definitions](/standards/javascript/comments/api-docs/type-defs).
+
+## Arrays
+
+We use the following syntax to declare arrays, since this is how arrays are most commonly declared in TypeScript itself. The alternative TypeScript syntax, `Array<string>`, is also supported.
+
+```js
+/** 
+ * @type {string[]} 
+ */
+```
+
+Where an array can hold values of multiple different types, use this type declaration syntax:
+
+```js
+/** 
+ * @type {(string | number)[]} 
+ */
+```
+
+## Promises
+
+For promises that do not return any meaningful value, except to represent successful completion of the asynchronous procedure, they can be typed like this:
+
+```js
+/** 
+ * @type {Promise}
+ */
+```
+
+Wherever the resolved value is significant, its range of possible types MUST be declared, like this:
+
+```js
+/** 
+ * @type {Promise<string>}
+ * @type {Promise<(string | number)>} 
+ */
+```
+
+We do not bother documenting rejected values, which can be expected to be of some `Error` type.
+
+## Functions
+
+Functions SHOULD be fully typed, which means declaring all their arguments and return types. See [/standards/javascript/comments/api-docs/functions] for more comprehensive instructions on typing functions.
 
 ```js
 /** 
@@ -89,44 +164,9 @@ const fn = (s, b) => {
 }
 ```
 
-## Optional and nullable types
-
-Optional properties may be specified using the standard JavaScript syntax.
-
-```js
-/** 
- * @type {{ a: string, b?: number }} 
- */
-```
-
-Use the following syntax to define nullable types.
-
-```js
-/**
- * @type {number | null}
- */
-```
-
-## Enums
-
-The `@enum` tag will get the TypeScript compiler to treat an otherwise plain JavaScript object literal a _bit_ more like a TypeScript enum type. All members of the object MUST be of the specified type and, unlike normal object literals, new members cannot be dynamically added after initialisation.
-
-```js
-/** 
- * @enum {number} 
- */
-const JSDocState = {
-  BeginningOfLine: 0,
-  SawAsterisk: 1,
-  SavingComments: 2,
-}
-
-JSDocState.SawAsterisk
-```
-
 ## Unknown types
 
-If a data structure is unknown — if it originates from an external, untyped source, for example — it's type may be defined as any arbitrary `Object` instance. Document your reasons why the object's structure can't be typed.
+If a data structure is unknown — if it originates from an external, untyped source, for example — its type may be declared as any arbitrary `Object` instance. Document your reasons why the object's structure can't be typed.
 
 ```js
 /**
@@ -148,7 +188,7 @@ Likewise, for functions with complex signatures, or if you have other sound reas
  */
 ```
 
-To define a type as the equivalent of TypeScript's `any` type, use JSDoc's `*` type. As in TypeScript, non-specific "any" types SHOULD be avoided as much as possible, and you MUST always document your reasons wherever you do disable the type checker.
+To declare a type as the equivalent of TypeScript's `any` type, use JSDoc's `*` type. As in TypeScript, non-specific "any" types SHOULD be avoided as much as possible, and you MUST always document your reasons wherever you do disable the type checker.
 
 ```js
 /**
@@ -159,114 +199,10 @@ To define a type as the equivalent of TypeScript's `any` type, use JSDoc's `*` t
  */
 ```
 
-## Type casts
-
-TypeScript borrows cast syntax from Google Closure. This lets you cast types to other types by adding an `@type` tag before any parenthesised expression.
-
-This is the only place we use single-line JSDoc comment notation.
-
-```js
-/** 
- * @type {number | string} 
- */
-let numberOrString = Math.random() < 0.5 ? "hello" : 100
-let typeAssertedNumber = /** @type {number} */ (numberOrString)
-```
-
-## `@this`
-
-The TypeScript compiler will infer the type of `this` from the context in which functions are called. If such context is not provided, you can specify the type of `this` using the `@this` flag.
+The type `?` means "unknown", at least according to VS Code's intellisense system. Do not use this type. Use "any" (`*`).
 
 ```js
 /**
- * @this {HTMLElement}
- * @param {*} e
+ * @type {?}
  */
-function callback(event) {
-  this.clientHeight = 100
-  // ...
-}
-```
-
-## Complex types
-
-The type syntax documented above is suitable for simple types. To document complex types, we need to turn to the `@typedef` flag.
-
-The following example uses TypeScript syntax to define a complex type.
-
-```js
-/** 
- * @typedef {{ prop1: string, prop2: string, prop3?: number }} SpecialType 
- */
-```
-
-Alternatively, if you wanted to comment each property, you could use this alternative JSDoc-based syntax:
-
-```js
-/**
- * @typedef {Object} SpecialType - creates a new type named 'SpecialType'
- * @prop {string} prop1          - a string property of SpecialType
- * @prop {number} prop2          - a number property of SpecialType
- * @prop {number} [prop3=42]     - an optional number property of SpecialType with default
- */
-```
-
-`@typedef` blocks stand on their own, and do not necessarily provide type definitions for the code immediately below them. Instead, once a custom type is defined via an `@typedef` block, that type definition can be referenced from any subsequent `@type`, `@param` or `@returns` flag.
-
-```js
-/** 
- * @type {SpecialType} 
- */
-let specialTypeObject
-```
-
-As well as defining complex data structures, `@tyepdef` can also be used to define functions with complex signatures. See [/standards/javascript/comments/api-docs/functions].
-
-Another option is to import types from TypeScript declaration files, which have the `.d.ts` extension. This can be incredibly useful for defining complex data structures that cannot be neatly defined inline in docblock notation. This way, you can define your types in TypeScript proper.
-
-```ts
-// `types.d.ts`
-export type Pet = {
-  name: string
-}
-```
-
-To import type information from `.d.ts` files, use this special `import()` syntax. This can be used on the `@type`, `@param` and `@returns` flags.
-
-```js
-/**
- * @param { import("./types").Pet } pet
- */
-function walk (pet) {
-  console.log(`Walking ${pet.name}...`)
-}
-```
-
-An even cleaner option is to `import()` types into `@typedef`, give the imported type an alias, and then reference the imported type via its alias in the normal way in `@type`, `@param` and `@returns` flags.
-
-```js
-/**
- * @typedef { import("./types").Pet } Pet
- */
- 
-/**
- * @type {Pet}
- */
-let myPet
-
-/**
- * @param {Pet} pet
- */
-function walk (pet) {
-  console.log(`Walking ${pet.name}...`)
-}
-```
-
-The `import()` syntax can also be combined with `typeof` to automatically discover the type of a value from a JavaScript module. This can be useful if you don't know the type, or it has a large type that is annoying to describe.
-
-```js
-/**
- * @type {typeof import("./accounts").userAccount }
- */
-const x = require("./accounts").userAccount
 ```

@@ -52,6 +52,10 @@ The Hacks Engineering Guide is a perpetual work-in-progress. At any one time, ma
 - [ ] Document how issues should be tagged
 ```
 
+## Language
+
+For consistency with our software projects, this documentation is written in **American English**.
+
 ## Credits
 
 The following resources were influential in the design of our engineering process. Other reference resources are linked throughout the Hacks Engineering Guide.

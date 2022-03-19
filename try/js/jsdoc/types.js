@@ -5,4 +5,3 @@
  */
 let msg
 msg = 100
-

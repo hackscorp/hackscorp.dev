@@ -1,48 +1,46 @@
 # Classes
 
-Example:
+All classes SHOULD be described via a docblock.
 
 ```js
-class C {
-
-  /**
-   * @param {number} data
-   */
-  constructor(data) {
-
-    // Property types can be left to be inferred...
-    this.name = 'foo'
- 
-    // ... or set explicitly...
-    /** 
-     * @type {string | null} 
-     */
-    this.title = null
- 
-    // ... or simply annotated, if they're set elsewhere.
-    /** 
-     * @type {number} 
-     */
-    this.size
- 
-    // This should error, since initialize() expects a string.
-    this.initialize(data)
-  }
-
-  /**
-   * @param {string} s
-   */
-  initialize = function (s) {
-    this.size = s.length
-  }
-
+/**
+ * Description of this class goes here.
+ */
+class ExampleClass {
+  // ...
 }
- 
-let c = new C(0)
 ```
 
-Watch out for the following gotcha. Our `C` class is intended to be called with `new`, but because this is JavaScript, the following invocation is allowed, and the resulting value is treated by JavaScript as an "any" type.
+Construction parameters, if any, MUST be declared in a docblock attached to the `constructor` method.
 
 ```js
-let result = C(1)
+/**
+ * @param {number} data - Optional description.
+ */
+constructor (data) {
+  // ...
+}
 ```
+
+**Important note**: Even the TypeScript type checker will allow invocation of classes without the `new` keyword. This mistake will be allowed to pass:
+
+```js
+let result = ExampleClass(1)
+```
+
+This is JavaScript, after all! The type of resulting value will be treated by TypeScript as an `any` type.
+
+## Class fields
+
+It is not necessary to declare the types for class fields, if their types can be inferred from the values assigned to them. But where a field is declared and its value set elsewhere, it is RECOMMENDED to declare the expected type with the field declaration.
+
+```js
+/** 
+ * @type {number} 
+ */
+size
+```
+
+## Class methods
+
+The signatures of class methods are declared using identical JSDoc syntax as for [standalone functions](/standards/javascript/comments/api-docs/functions).

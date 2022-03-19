@@ -1,72 +1,27 @@
 # Other docblock syntax
 
-## `@experimental`, `@alpha`, `@beta`, and `@deprecated`
+The TypeScript compiler [supports a handful more tags](//www.typescriptlang.org/docs/handbook/jsdoc-supported-types.html) such such as `@override` and `@implements`, and `@public`, `@private` and `@protected`, but we have not (so far) found these to be particularly useful in the context of JavaScript programs.
 
-The `@experimental`, `@alpha` and `@beta` are from the emerging TSDoc standard. Though these tags are not widely supported, they will be useful to indicate the stage of a software component in its development lifecycle. Users ought to be aware of using any APIs that are marked with any of these flags.
+In addition, there is even more syntax documented on the [JSDoc](//jsdoc.app/) and [TSDoc](//tsdoc.org/) websites. TSDoc is a superset of the docblock syntax supported by the TypeScript type checker, which itself is an extended superset of the original JSDoc.
 
-When a function, method or property is deprecated, you can let your users know by flagging it as such. It is RECOMMENDED you leave a comment explaining when the component will be removed entirely.
+Much of JSDoc is legacy markup for pre-ES6 JavaScript. For example, `@constructor` was used to declare functions as constructor functions. Much JSDOc notation is therefore no longer useful in post-ES6 codebases.
 
-```js
-/**
- * @deprecated - this export is scheduled to be removed in v2
- */
-const api = { /* ... */ }
-```
+TSDoc a newly emerging specification. It is aiming to become a new, modern standard for docblock notation that will be useful for a range of development toolchains, beyond type checkers and API documentation generators.
 
-The TypeScript compiler may issue warnings when deprecated APIs are used. VS Code and other code editors with intellisense tools will typically display deprecated APIs in a strike-through style.
+You MAY use any additional docblock types and tags supported by either the TypeScript compiler or specified in JSDoc and/or TSDOc. However, additional comment markup should be used sparingly. We aim to use only a small subset of docblock notation, focusing on TypeScript-flavoured JSDoc. We think that docblocks work best where they provide _just enough_ information to be useful for type checking and to instruct on correct usage of a component's public API.
 
-## @example
+Used wisely, docblocks can help to reduce cognitive load. Misused, they can do the opposite.
 
-We've adopted the syntax of the `@example` flag as documented in the TSDoc standard. Each `@example` block MUST be preceded by a single empty line within the docblock. Text that is placed between the `@example` flag and the opening of the code block (which is demarcated using Markdown syntax) is meant to be interpreted as a title for the example.
+Above all, docblocks MUST be readable, and they must be understandable even by developers who are not familiar with JSDoc/TSDoc markup.
+
+Remember that JSDOc/TSDoc type notations are a only a stepping stone from JavaScript to TypeScript. They are a middle ground between the two. If a JavaScript application evolves in complexity such that you find you get much benefit from using tags such as `@enum`, then it is probably time to consider incrementally refactoring your JavaScript code to full TypeScript.
 
 ```js
-/**
- * Adds two numbers together.
- * 
- * @param {number} x
- * @param {number} y
- * 
- * @returns {number}
- * 
- * @example
- * ```
- * // Prints "2"
- * console.log(add(1, 1))
- * ```
- * 
- * @example
- * Example with negative numbers
- * ```
- * // Prints "0"
- * console.log(add(1, -1))
- * ```
+/** 
+ * @enum {boolean} 
  */
-function add (x, y) {
-  // ...
+const ModalOpenState = {
+  Closed: false,
+  Open: true,
 }
 ```
-
-## `@see` and `@link`
-
-TypeScript uses these flags to link to other parts of a program.
-
-TODO: But we use `@see` for documentation links! We use `@ref` instead, which is non-standard.
-
-## `@author`
-
-TODO: This is supported by the TypeScript compiler.
-
-```js
-/**
- * Welcome to awesome.ts
- * @author Hacks Ltd <hello@hackscorp.dev>
- */
-```
-
-## Even more
-
-The TypeScript compiler supports a handful more flags such such as `@override` and `@implements`, and `@public`, `@private` and `@protected`, but we have not found these useful in the context of JavaScript programs. [Here's the documentation](//www.typescriptlang.org/docs/handbook/jsdoc-supported-types.html) covering all docblock syntax that is supported by the TypeScript compiler.
-
-In addition, there is even more syntax documented on the [TSDoc website](//tsdoc.org/). TSDoc is a superset of the docblock syntax supported by the TypeScript type checker, and it is aiming to become a new standard for docblock notation that will be useful for a range of development toolchains, beyond type checkers and API documentation generators.
-
-If additional docblock syntax is adopted, it MUST be documented in this section of our engineering guide. We aim to use only a small subset, just the most useful parts, of TypeScript-flavour JSDoc + TSDoc.

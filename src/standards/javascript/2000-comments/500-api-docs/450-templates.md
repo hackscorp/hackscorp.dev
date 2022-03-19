@@ -1,25 +1,30 @@
 # Templates
 
-The TypeScript type checker supports function parameter type declarations with the `@template` tag. This lets you define generic types that "flow through" functions or classes.
+The `@template` tag allows you to declare generic types that "flow through" functions or classes.
+
+In the following example, the function accepts a single parameter of any type, and it will return a value of the same type as the input value.
 
 ```js
 /**
  * @template T
- * @param {T} x - a generic value that flow through to the return type
+ * @param {T} x
  * @returns {T}
  */
 function id (x) {
   return x
 }
 
-const a = id('str')
-const b = id(123)
-const c = id({})
+// Allowed usage examples:
+id('str')
+id(123)
+id({})
 ```
 
 For type checking, this is a better option than using `any` types. But for the human reader, this syntax is not particularly expressive. Be sure to leave a comment to explain that the `T` type is a container for whatever type is passed in.
 
-Templates may be comma-separated...
+The letter `T` is commonly used as a default template identifier, but any identifier may be chosen. It is convention to use a single upper case letter.
+
+A function or class may make use of multiple templates. Multiple templates can be declared in a comma-separated list via a single `@template` tag, or one-per-tag.
 
 ```js
 /**
@@ -27,17 +32,15 @@ Templates may be comma-separated...
  */
 ```
 
-... or declared one at a time, which is better for commenting:
-
 ```js
 /**
- * @template T - optional description
- * @template U - optional description
- * @template V - optional description
+ * @template T - Optional description.
+ * @template U - Optional description.
+ * @template V - Optional description.
  */
 ```
 
-Finally, `@template` can be used in conjunction with `@extends` when a JavaScript class extends a generic base class, and you want to pass down a type argument.
+The `@template` tag can also be used in conjunction with `@extends` where a class extends a generic base class, and you want to pass down the argument types.
 
 ```js
 /**
