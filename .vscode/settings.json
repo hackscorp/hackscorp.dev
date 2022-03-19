@@ -2,11 +2,13 @@
   // Transform tabs to two spaces.
   "editor.tabSize": 2,
 
-  // Render vertical rulers at 80, 100 and 120 columns. Code lines SHOULD be
-  // less than 80 characters long. JSDoc comments MAY go up to the 100 ruler.
-  // No source files SHOULD have lines longer than 120 characters, but even
-  // this is not a hard limit.
-  "editor.rulers": [80, 100, 120],
+  // Render vertical rulers at 80 and 120 columns.
+  //
+  // Code lines and standard comments SHOULD be less than 80 characters long,
+  // while JSDoc-style docblocks SHOULD be shorter than 120 characters. But in
+  // either case, these are not hard limits — some lines MAY be longer where
+  // this is best for readability.
+  "editor.rulers": [80, 120],
 
   // Lines will wrap at the edge of the editor area.
   "editor.wordWrap": "on",
@@ -43,7 +45,7 @@
 
 
   // Spell check language.
-  "cSpell.language": "en-GB",
+  "cSpell.language": "en-US",
 
   // File paths to not spell check.
   "cSpell.ignorePaths": [
@@ -92,8 +94,13 @@
 
   // Enable the TypeScript type checker in all JavaScript files by default.
   // This is equivalent to writing `@ts-check` in a comment at the top of all
-  // JavaScript files. JSDoc notations will be used to gather additional
-  // type information.
+  // JavaScript files. JSDoc-style comments will be used to gather API
+  // information for the purpose of type checking.
+  //
+  // This setting will be ignored if this repository is opened within a wider
+  // VS Code workspace. Therefore, to ensure a consistent developer experience,
+  // it is RECOMMENDED that every JavaScript file have either the `@ts-check`
+  // or `@ts-nocheck` annotation to the top.
   "js/ts.implicitProjectConfig.checkJs": false,
 
   // Configuration for the ToDo Tree extension. We use only `TODO` notations.
