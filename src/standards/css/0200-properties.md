@@ -1,6 +1,6 @@
 # Properties
 
-## General style rules
+## General style
 
 In property declarations, there MUST be a single empty space after the `:` and before the value. But there MUST NOT be any space between the property name and the colon.
 

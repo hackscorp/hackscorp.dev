@@ -1,6 +1,6 @@
 # Selectors
 
-## General style rules
+## General style
 
 Include one space between the selector and the opening brace.
 
