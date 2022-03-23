@@ -44,7 +44,8 @@
   },
 
 
-  // Spell check language.
+  // Spell check language. For consistency with our technical documentation,
+  // we write in American English.
   "cSpell.language": "en-US",
 
   // File paths to not spell check.
