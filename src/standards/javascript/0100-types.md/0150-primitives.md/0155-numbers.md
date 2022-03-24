@@ -41,7 +41,7 @@ So, the general rule in JavaScript is that you SHOULD scale numerical values by 
 
 This does not solve all problems. Division of integers and multiplication by decimals may still produce inexact values. But basic integer addition, subtraction and multiplication will be accurate — at least until you hit JavaScript's upper limit for the `number` type, in which case you can upgrade to `bigint` if your target runtime environments support it.
 
-An alternative approach is to develop custom value types, for example a `Money` class which stores dollar and cents values as separate integers. Custom value objects cannot, of course, be used with JavaScript's arithmetic operators, so you will also need to develop custom APIs to perform arithmetic. You don't need to reinvent the wheel here — there are a large number of vendor libraries dedicated to solving the problem of floating point precision this way, such as [bigDecimal](//github.com/royNiladri/js-big-decimal):
+An alternative approach is to develop custom value types, for example a `Money` class which stores dollar and cents values as separate integers. Custom value objects cannot, of course, be used with JavaScript's arithmetic operators, so you will also need to develop custom APIs to perform arithmetic. You don't need to reinvent the wheel here — there are a large number of vendor libraries dedicated to solving the problem of floating point precision this way, such as [bigDecimal](//github.com/royNiladri/js-big-decimal), [bignumber.js](//github.com/MikeMcl/bignumber.js/) and [Decimal.js](//github.com/MikeMcl/decimal.js). They all have APIs similar to this:
 
 ```js
 const n1 = new bigDecimal('1234')
