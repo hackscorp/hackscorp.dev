@@ -15,5 +15,3 @@ In general, more attention needs to be paid to the technical debt backlog in the
 - When more developer hours seem to be dedicated to "fire fighting" than innovation or product development.
 
 - When new tech stacks are added, and especially if there is a requirement to build interfaces between old and new systems, for example.
-
-
