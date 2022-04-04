@@ -1,5 +1,9 @@
 # Technical debt
 
+Technical debt means different things to different people. It has come to mean all "cruft" that has accumulated in a project, everything that people don't like about the code. But, correctly speaking, technical debt refers to _considered decisions to push back final choices on solution design to a later date_.
+
+We distinguish between this category of technical debt and the separate processes of maintenance and [refactoring](/practices/refactoring).
+
 Technical debt is not always bad.
 
 Used intelligently, technical debt helps improve engineering agility. It allows us, for example, to settle with a second-rate design in the short-term to get something to market sooner, or to quickly fix an obstacle standing in the way of business goals, or just to focus on getting things done, focusing on creative solutions over the elusive goal of perfection.
