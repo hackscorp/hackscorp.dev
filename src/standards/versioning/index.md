@@ -23,3 +23,5 @@ The rules are:
 It is possible also to use conventions such as Conventional Commits and tools such as Commitzen to automate the process of bumping version numbers, based on Git commit messages. Conventional Commits help to write commit messages in a machine-readable and human-readable way, so you can automate versioning of your packages. Versioning tools such as Lerna also understand Conventional Commits.
 
 Be aware of the limitations of SemVer. SemVer helps to make sure we're communicating with our users, but is has its flaws. Most notably, it can be difficult to determine whether a change breaks backwards compatibility, because it is impossible for library authors to know every single way the individual parts of their packages are being used.
+
+And Semantic Versioning is not an excuse for routinely introducing breaking changes. If you're putting out a major version number every month, it's meaningless.
