@@ -1,12 +1,20 @@
 # Type definitions
 
-To document complex types, we need to turn to the `@typedef` tag.
+To document complex types, we need to turn to the `@typedef` tag. This is the equivalent of writing an interface in TypeScript.
 
-The following example uses TypeScript syntax to declare a complex custom object. This custom object is given the identifier `SpecialType`, but note this is just a _reference_ for the type definition. The name does not need to match anything in the source code.
+```ts
+interface Address {
+  street: string;
+  city: string;
+  zip?: number;
+}
+```
+
+The following example uses TypeScript syntax to declare the equivalent interface in a docblock. This custom object is given the identifier `Address`, but note this is just a _reference_ for the type definition. The name does not need to match anything in the source code.
 
 ```js
 /** 
- * @typedef {{ prop1: string, prop2: string, prop3?: number }} SpecialType 
+ * @typedef {{ street: string, city: string, zip?: number }} Address 
  */
 ```
 
@@ -14,10 +22,10 @@ Alternatively, if you wanted to comment each property, you can use this alternat
 
 ```js
 /**
- * @typedef {Object} SpecialType Creates a new type named 'SpecialType'.
- * @prop {string} prop1 A string property of SpecialType.
- * @prop {number} prop2 A number property of SpecialType.
- * @prop {number} [prop3=42] An optional number property of SpecialType with default.
+ * @typedef {Object} Address
+ * @prop {string} street
+ * @prop {number} city
+ * @prop {number} [zip]
  */
 ```
 
@@ -25,9 +33,9 @@ Alternatively, if you wanted to comment each property, you can use this alternat
 
 ```js
 /** 
- * @type {SpecialType}
+ * @type {Address}
  */
-let specialTypeObject
+let customerAddress
 ```
 
 Another example:
