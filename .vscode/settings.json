@@ -18,7 +18,7 @@
   "[markdown]":{
     "editor.rulers": [],
     "editor.wordWrap": "bounded",
-    "editor.wordWrapColumn": 80,
+    "editor.wordWrapColumn": 120,
   },
 
   // Markdownlint rules. We use the default linting ruleset with some tweaks.
@@ -64,9 +64,11 @@
   // A list of words to be considered correct spellings.
   "cSpell.words": [
     "datatracker",
+    "declutter",
     "dialog",
     "docblocks",
     "Documentor",
+    "filesystems",
     "hackscorp",
     "hacksinc",
     "nirvarnia",
