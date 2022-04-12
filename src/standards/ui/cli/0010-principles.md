@@ -34,7 +34,7 @@ Make things time out. Allow network timeouts to be configured, but have a reason
 
 Make requests idempotent where possible. If the program fails for some transient reason — eg the network connection went down — the should be able to press `Up` and `Enter` and pick up right where they left off.
 
-Make it "crash only". This means designing your programs in such as way that no cleanup is done immediately after operations. Instead, postpone the cleanups to a later time, which may be the at the start of the program's next run. "Crash only" programs are free to exit immediately on failure and on user interruption (`Ctrl`+`C`), making them feel more responsive and robust.
+Make it "crash-only". Crash-only programs are free to exit immediately on failure and on user interruption (`Ctrl`+`C`), making them feel more responsive and robust. (We've got a section on the principles of [crash-only software design](/standards/programming/principles/crash-only).)
 
 If you change state, tell the user. When a command changes the state of a system, it's especially valuable to explain what has just happened, so the user can model the state of the system in their head — particularly if the result doesn't directly map to what the user requested. Make it easy to see the current state of the system. If your program does a lot of complex state changes and it is not immediately visible in the filesystem, make sure you make this easy to view. For example, `git status` tells you as much information as possible about the current state of your Git repository, and some hints at how to modify the state.
 
