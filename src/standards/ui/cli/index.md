@@ -8,5 +8,8 @@ This section does not cover the design of full-screen terminal programs, things 
 
 ## References
 
-- **[Command Line Interface Guidelines](//clig.dev/)** \
+- **[Command line interface guidelines](//clig.dev/)** \
   A free, open source, online guide to writing better command line programs, taking traditional UNIX principles and updating them for the modern day.
+
+- **[The poetics of CLI command names](//smallstep.com/blog/the-poetics-of-cli-command-names/)** \
+  Carl Tashian (2020)
