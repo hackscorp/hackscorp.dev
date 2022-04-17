@@ -175,3 +175,5 @@ $ source ~/.zshrc
 Oh My Zsh — and probably other shell configuration frameworks — are based on [Powerline](//github.com/powerline/powerline). This was [originally a Vim plugin](//github.com/Lokaltog/vim-powerline) for customizing the status line at the bottom of Vim's screen, but it was subsequently rewritten in Python to provide a more general purpose configuration framework for all kinds of status lines and prompt lines.
 
 Inevitably, there are other forks and derivatives of Powerline. [Powerline Shell](//github.com/b-ryan/powerline-shell) is another Python program that focuses on modifying the prompt line in Bash, Zsh and Fish. Powerline Shell has not been updated for quite a few years now, but it has been ported to Go in the [Powerline Go](//github.com/justjanne/powerline-go), which is still actively maintained.
+
+Finally, **[Spaceship](//spaceship-prompt.sh/)** is an alternative to Oh My Zsh for configuring the prompt in the Zsh shell specifically.
