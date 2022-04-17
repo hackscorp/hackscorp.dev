@@ -154,7 +154,7 @@ You configure Zsh through the Zsh run command file, `~/.zshrc`. Open that in you
 ZSH_THEME="agnoster"
 ```
 
-For themes like Agnoster you will also need to install the Powerline Fonts (these are not the same as the Nerd Fonts used by Oh My Posh):
+For themes like Agnoster you will also need to install the Powerline Fonts:
 
 ```sh
 $ sudo apt-get install fonts-powerline
