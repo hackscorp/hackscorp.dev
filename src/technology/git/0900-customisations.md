@@ -24,6 +24,8 @@ You can customize how your terminal's prompt line displays information about the
 
 The following instructions cover installation and configuration of Oh My Posh for PowerShell and Git Bash on Windows. For WSL follow the instructions for [Linux](//ohmyposh.dev/docs/linux), and for macOS see [here](//ohmyposh.dev/docs/macos).
 
+> It is NOT recommended to use WSL — not even WSL2 — for interacting with Git repositories that are mounted from external drives. It is fine for source code that is under `~/` in Ubuntu, but if source code is under `/mnt` the Git commands are horribly slow.
+
 Except for the minimalist themes that don't render any icons, you will need to install a [Nerd Font](//ohmyposh.dev/docs/config-fonts). These fonts are extended with additional characters that are used in the prompt lint. Meslo LGN NF is recommended for use with Oh My Posh. Cascadia Code is another popular option. This font ships with Windows Terminal, but you will need to download and install [Cascadia Code PL](//github.com/microsoft/cascadia-code/releases), a version of the font that Microsoft has made with support for the Powerline glyphs.
 
 When you've installed the Nerd Font of your choice, set Windows Terminal to use it via the program's normal settings.
