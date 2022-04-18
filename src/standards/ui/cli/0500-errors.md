@@ -1,6 +1,8 @@
 # Errors
 
-Errors and other log messages SHOULD go to stderr. This means that, when commands are piped together, the error messages will get displayed to the user but the standard output will get piped into the next command. But do not treat stderr like a log file. Don't print log-level labels here — "ERROR", "WARN", etc. — or any other extraneous contextual information, unless in verbose mode.
+Errors and other log messages SHOULD go to stderr. This means that, when commands are piped together, the error messages will get displayed to the user but the standard output will get piped into the next command.
+
+But do not treat stderr like a log file. Don't print log-level labels here — "ERROR", "WARN", etc. — or any other extraneous contextual information, unless in verbose mode.
 
 It is RECOMMENDED to use only a limited amount of color in stderr output, or no color at all. Prefer to use only indentation and other plain-text formatting to give the output structure. However, it can be beneficial to use some color — the convention for errors is to use red — to draw the user's attention to the important bits of information in verbose outputs. The same rules apply as for stdout — disable colors in the stderr output in these circumstances:
 
@@ -23,3 +25,8 @@ Consider where the user will look first. Put the most important information at t
 If there is an unexpected or unexplainable error, provide debug and traceback information, and instructions on how to submit a bug. That said, don't forget about the signal-to-noise ratio: you don't want to overwhelm the user with information they don't understand. Not all users are developers like you! Consider, for example, writing scary-looking stack traces to a debug log fiel, instead of printing it to the terminal.
 
 Make it effortless to submit bug reports. One nice thing you can do is provide a URL and have the bug submission form pre-populated with as much information as possible.
+
+## Further reading
+
+- **[Formatting error messages](//www.gnu.org/prep/standards/html_node/Errors.html)** \
+  The relevant section from the GNU coding standards.

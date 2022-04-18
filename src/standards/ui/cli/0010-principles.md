@@ -112,3 +112,8 @@ Don't have a catch-all subcommand. If you have a subcommand that's likely to be 
 Don't allow arbitrary abbreviations of subcommands. For example, say your tool has an `install` subcommand. When you added it, you wanted to save users some typing, so you allowed them to type any non-ambiguous prefix, like `mycmd ins`, or even just `mycmd i`, and have it be an alias for `mycmd install`. Now you're stuck: you can't add any more commands beginning with `i`, because there are scripts out there that assume `i` means `install`. There's nothing in principle wrong with aliases — saving on typing is good — but they should be explicit and remain stable.
 
 Finally, avoid creating time bombs. Imagine it's 20 years from now. Will your command still run the same as it does today, or will it stop working because some external dependency on the internet has changed or is no longer maintained? The server most likely to not exist in 20 years is the one that you are maintaining right now. (Don't build in a blocking call to Google Analytics either.)
+
+## Further reading
+
+- **[Writing robust programs](//www.gnu.org/prep/standards/html_node/Semantics.html)** \
+  The relevant section from the GNU coding standards.

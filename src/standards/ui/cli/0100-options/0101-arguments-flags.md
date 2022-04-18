@@ -66,3 +66,8 @@ It is safe also to prompt users for passwords and other secrets, but you SHOULD 
 For flags that accept optional values, consider allowing a special word like "none" to refer to no value at all.
 
 For example, `ssh -F` accepts an optional filename (an alternative path to `ssh_config`) but `ssh -F none` runs SSH with no config file at all.
+
+## Further reading
+
+- **[Standards for command line interfaces](//www.gnu.org/prep/standards/html_node/Command_002dLine-Interfaces.html)** \
+  The relevant section from the GNU coding standards.
