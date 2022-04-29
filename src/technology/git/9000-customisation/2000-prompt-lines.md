@@ -1,24 +1,12 @@
-# Git customizations
+# Customizing the prompt line
 
-This section is a series of tutorials for customizing Git's user interface.
+You can customize how your terminal's prompt line displays information about the Git repository of the current working directory.
 
-## Aliases
+All shells are configurable to some extent, and a number of tools are available to make their configuration easier, for example by enabling a pluggable framework for theming and customization. Popular tools include Oh My Zsh (for the Z Shell) and Oh My Posh (originally for PowerShell but now providing a cross-platform solution for customizing numerous different shell environments).
 
-TODO - Examples:
+We cover a few of the most popular tools below.
 
-```txt
-alias ll="ls -ltra"
-alias gd="git diff"
-alias gcmsg="git commit -m"
-alias gitc="git checkout"
-alias gitm="git checkout master"
-```
-
-## Prompt customization
-
-You can customize how your terminal's prompt line displays information about the Git repository of the current working directory. All shells are configurable to some extent, and a number of tools are available to make their configuration easier, for example by enabling a pluggable framework for theming and customization. Popular tools include Oh My Zsh (for the Z Shell) and Oh My Posh (originally for PowerShell but now supporting multiple shells). We cover a few of the most popular tools below.
-
-### Oh My Posh
+## Oh My Posh
 
 **[Oh My Posh](//ohmyposh.dev/)** is a framework, written in Go, for customizing the prompt line of _any shell_. It started out at a PowerShell module, but has evolved into a cross-platform framework for customizing the prompt line of PowerShell, Cmd, Bash, Zsh, Fish and Nu.
 
@@ -100,7 +88,7 @@ As with PowerShell, you will need to use a Nerd Font in the Git Bash terminal to
 
 Oh My Posh is highly customizable — see the website for more options. What is great about Oh My Posh is that, as a consistent cross-platform framework, configurations can be shared between shells. Thus, you can expose your Powershell, Git Bash and WSL environments to the same configuration that is loaded for PowerShell, for example.
 
-### Posh Git
+## Posh Git
 
 **[Posh Git](//github.com/dahlbyk/posh-git)** is a PowerShell module that adds information about the current working Git repository to PowerShell's prompt line. If the only shell you use is PowerShell, and if all you want to do is decorate its prompt line with metadata from local Git repositories, then this will be a lighter option than Oh My Posh. You DO NOT need to install both Oh My Posh _and_ Posh Git — Oh My Posh does everything that Posh Git does. Choose one or the other.
 
@@ -126,7 +114,7 @@ Import-Module posh-git
 
 There's also a project called **[posh-git-bash](//github.com/lyze/posh-git-sh)**, which replicates Posh Git's functionality in a standalone Bash script, for easy import into Bash, Zsh and other Unix shells.
 
-### Oh My Zsh
+## Oh My Zsh
 
 If you use the Zsh shell, you can use **[Oh My Zsh](//ohmyz.sh/)** to customize its prompt line. This is similar in concept to Oh My Posh, but it is a framework for customizing Zsh specifically, and can be used to theme the whole look-and-feel of Zsh, not only its prompt line.
 
