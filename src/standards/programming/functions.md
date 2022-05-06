@@ -48,3 +48,9 @@ const stopLoading = () => {
 ```
 
 Had we designed a `setLoading()` function in the first place, it's more likely that its interface would have had to change with the implementation. This is not a _huge_ anti-pattern, but it is nonetheless good practice to treat mutations as a clear extra layer of abstraction. The responsibility of the layer is reduced.
+
+## Output arguments
+
+Do not use output arguments.
+
+All output should come from the return values of functions. After all, this is how we _think_ about functions. So having output arguments (ie input parameters that get mutated by the function — side effects — in the outer scope) violates the principle of least surprise.
