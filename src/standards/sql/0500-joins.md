@@ -1,0 +1,3 @@
+# SQL joins
+
+![](<joins.jpg>)
