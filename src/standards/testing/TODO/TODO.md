@@ -1,51 +1,5 @@
 # Testing
 
-## Testing levels
-
-As a general rule, low level testing (eg unit) is more useful for generic, reusable components (packages and libraries), while higher level testing (integration and functional, aka end-to-end or e2e) is more useful for applications.
-
-Refactoring is difficult when test coverage is mainly at the unit level — ie a dedicated unit test for every individual class or function, where its dependencies are mocked...
-
-> ...  This type of automated testing locks down each class to behave and communicate with other classes in a very specific way as you are essentially testing the implementation of the codebase rather than the behavior. This means that whenever a class changes its unit tests, and often other tests mocking that class, needs to be updated. This is not nice when the change is a purely structural refactoring, such as moving some piece of logic to a reusable component, where the external behavior of your codebase does not change.
->
-> For this reason, we err on the side of behaviour testing, rather than unit testing, for our applications. (We still have comprehensive component test coverage for our reusable libraries.)
-
-### Units tests
-
-Unit tests are a good idea for components that have been badly implemented, or have proven to be brittle.
-
-Not every unit of code should be covered with tests. It may not be particularly beneficial to retrospectively cover code with tests when that code has already proven reliable in real-world production applications, and when that code is unlikely to be changed or extended in the future.
-
-However, Engineers SHOULD retrospectively apply unit tests to components before refactoring them. This is a great way to reduce the changes of introducing regressions.
-
-And some dependencies are just too hard to mock, in which case you may decide to skip pure unit tests and focus instead on integration and other high level tests.
-
------
-
-# Testing
-
-## Code style
-
-The same [clean code](/principles/clean-code) standards apply for test code as well as they do for production code.
-
-Avoid rigidity, fragility and immobility in test code. Requirements should be _expected_ to change, and so we must be able to accommodate change in both the production and test areas of code.
-
-## Test coverage
-
-**Test coverage** (aka code coverage) metrics should be taken at different levels, ie we should check what our integration tests cover as much as what our unit tests cover. Doing so allows us to uncover gaps in coverage and reduce the risk of untested code being deployed to production.
-
-For most types of tests there are diminishing returns and 100% coverage across-the-board is rarely of value. Furthermore, some types of tests are more fragile than others, so it is generally advised to have a much higher coverage of unit tests compared to browser-automated UI tests, for example.
-
-Ultimately, the technical architect and/or test lead should provide specific guidance and monitor against this.
-
-For unit tests, the more plumbing code necessary for a module, the lower the benefit of will be, and therefore the lower the target. Typically, the coverage target for unit tests is between 70% and 90%.
-
-For tests that cover fragile areas of the system, such as UI tests of an evolving webapp, the better-value approach may be to have a smaller number of tests that cover the important user journeys, rather than focus on high coverage. If the time spent to fix/update broken tests starts to approach the time it takes to regularly manually test the same application areas, then the value has been lost.
-
-The quality of tests is equally as important. It is easy to gamify test coverage and have a high coverage, but low quality tests. For example, although it should be obvious, all tests need to have assertions!
-
-Ensure the right code is executed. For example, if a particular task includes bringing in part of a legacy codebase, on which we've agreed not to ensure coverage, it shouldn't affect these metrics (although it may be worth knowing this metric separately).
-
 ## Unit testing
 
 The key to good unit testing is to write **testable code** in the first place. Applying simple design principles can help. In particular:
@@ -237,22 +191,6 @@ Focus on coverage of the bits of that are most likely to cause problems or not w
 
 ------
 
-
-## Testing levels
-
-### Unit testing
-
-> Unit testing means testing the behavior of code in small, independent units. Units are typically designed to be the smallest meaningful chunk of independently testable code. This is in comparison of integration testing, in which a set of modules are tested as a group. Reading and writing unit tests is an important essential skill for most software engineers, whereas the way that integration tests are done varies widely from product to product.
-
------
-
-
-----
-
-Behavior tests should be covered, the solution finalized, before moving onto benchmarks and performance optimization.
-
------
-
 # Test strategy
 
 Testing is highly integrated into our delivery methodolgy, "shifting left" to introduce scrutiny and feedback into the software delivery process as early as possible.
@@ -266,16 +204,6 @@ By automating tests and building them into the development process, the team wil
 Visibility will be provided by a dashboard showing the current status of automated test builds. It is also crucial to minimise the amount of slow and brittle automated UI testing, so the team will instead push this down to unit test level as far as possible, in order to implement a fast, lean and focused automated testing capability.
 
 In addition, special attention will be placed on accessibility testing to ensure the website can be accessed by as wide an audience as possible. This will also take place in-sprint during developing by the team, using a combination of automated and manual testing, and by read users using assistive technologies. All functionality will not be considered "done" until accessibility has been tested and any issues resolved.
-
-## Unit testing
-
-Automated unit tests MUST be written by Developers as an integral part of the software development process, to ensure each section of an application (ie each "unit") meets its design and behaves as intended.
-
-The Tech Lead will select the unit testing framework, including the test runner, assertion library, mocking library, and UI component testing library. The Tech Lead will also oversee unit test quality and coverage.
-
-A [classicist ("Detroit") unit testing approach](//blog.devgenius.io/detroit-and-london-schools-of-test-driven-development-3d2f8dca71e5) SHOULD be followed.
-
-Unit tests MUST be written at the same time as development code. A "test-driven development" approach is not essential, but what is REQUIRED is that code and its unit tests are merged into the mainline at the same time.
 
 ## Functional testing
 

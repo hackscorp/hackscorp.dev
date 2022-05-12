@@ -1,4 +1,4 @@
-# Keep it simple
+# Keep it simple (aka clean code)
 
 Complexity is _the_ root cause of the vast majority of problems in software development today. In fact, it has always been thus.
 

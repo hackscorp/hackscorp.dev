@@ -9,3 +9,9 @@ Unlike unit tests, acceptance tests are "black box" interactions in which we do 
 As a business, Hacks put a lot of expectations on the quality and coverage of our acceptance tests. We don't necessarily write the tests first, but we definitely define up-front the acceptance criteria, which will subsequently be used as a basis for the structure of the test scripts that will automate acceptance testing.
 
 Acceptance tests tend to be developed and maintained by dedicated software testing teams, aka Quality Assurance (QA) or Quality Control (QC), whereas unit tests tend to be written by software developers.
+
+<!--
+
+Behavior tests should be covered, and the solution finalized, before moving onto benchmarks and performance optimization.
+
+-->
