@@ -6,7 +6,7 @@ Following Fred Brooks' model, we distinguish between _essential complexity_ and 
 
 If simplicity is not a goal, accidental complexity is more likely to occur as the system grows, and will gradually negatively affect almost everything from changing the system to even being able to understand it.
 
-Don't pick a solution until you've thought of at least one more. It's enticing and exciting when that thing clicks in your head and you realise you found a way to solve the problem. Perhaps with a trivial problem that's cool and there's really nothing more to do. However, if the problem is non-trivial or important, it's worth considering that there may be other solutions you simply haven't thought of yet.
+Don't pick a solution until you've thought of at least one more. It's enticing and exciting when that thing clicks in your head and you realize you found a way to solve the problem. Perhaps with a trivial problem that's cool and there's really nothing more to do. However, if the problem is non-trivial or important, it's worth considering that there may be other solutions you simply haven't thought of yet.
 
 To avoid getting carried away in the excitement of going from no solution to a solution, and simply going with the first thing that comes into your head, try to think of at least one more solution. Trying to find a second solution often forces you to think differently, and once you have two options you'll be forced to consider the trade-offs between the two. This can also help to frame the problem more clearly as well.
 

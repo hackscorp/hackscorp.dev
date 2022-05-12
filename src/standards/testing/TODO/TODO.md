@@ -1,29 +1,5 @@
 # Testing
 
-## Unit testing
-
-The key to good unit testing is to write **testable code** in the first place. Applying simple design principles can help. In particular:
-
-- Use a good **naming convention**
-- Don't repeat yourself, ie avoid **code duplication**
-- **Single responsibility**: each object/function must focus on a single task
-- Keep a **single level of abstraction** in the same component. For example, do not mix business logic with lower-level technical details in the same method. 
-- **Minimise dependencies** between components: encapsulate, interchange less information between components.
-- **Support configurability** rather than hard-wiring. This prevents having to replicate the exact same environment when testing (eg markup)
-- Apply adequate **design patterns**, especially **dependency injection**, which allows separating an object's creation responsibility from its business logic.
-- Avoid global mutable state
-
-**Write your tests in the BDD style where possible.**
-
-### General guidelines
-
-- Writing a test first makes the code design testable, de facto
-- Writing just the amount of code needed to implement the required functionality makes the resulting codebase minimal, thus more maintainable
-- The codebase can be enhanced using refactoring mechanisms, the tests given you confidence that the new code is nto modifying the existing functionalities
-- Cleaning the code in each cycle makes the codebase more maintainable, it is much cheaper to change the code frequently and in small increments
-- Fast feedback for the developers, you know that you don't break anything and that you are evolving the system in a good direction
-- Generates confidence to add features, fix bugs, or explore new designs
-
 ### Naming tests
 
 Test names should be concise, explicit, descriptive, and in correct English. Read the output of the spec runner and verify that it is understandable! Keep in mind that someone else will read it too.
