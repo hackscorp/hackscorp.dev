@@ -24,6 +24,14 @@ In their 2006 paper, [Out of the Tar Pit](//curtclifton.net/papers/MoseleyMarks0
 
 > The “software crisis” was first identified in 1968 and in the intervening decades has deepened rather than abated. The biggest problem in the development and maintenance of large-scale software systems is complexity — large systems are hard to understand. We believe that the major contributor to this complexity in many systems is the handling of _state_ and the burden that this adds when trying to analyse and reason about the system. Other closely related contributors are _code volume_, and explicit concern with the _flow of control_ through the system.
 
+<!--
+
+You cannot have security without simplicity. Everything else flows from simplicity.
+
+> The greatest limitation 
+
+-->
+
 ## Further reading
 
 - [Out of the Tar Pit](//curtclifton.net/papers/MoseleyMarks06a.pdf) \

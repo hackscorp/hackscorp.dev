@@ -60,6 +60,9 @@ For consistency with our software projects, this documentation is written in **A
 
 The following resources were influential in the design of our engineering process. Other reference resources are linked throughout the Hacks Engineering Guide.
 
+- **A philosophy of software design** \
+  TODO: Add link and metadata.
+
 - **Software engineering at Google** \
   Fergus Henderson — A leaked internal document about how Google does software engineering. Google it to read it!
 

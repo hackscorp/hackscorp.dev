@@ -1,6 +1,12 @@
 # Runtime testing
 
-It was once the case that software houses had to employ whole departments of software testers. But as the tools and techniques we use to make software have matured, much of this work can now be automated. Not all of it, some runtime testing technique are still manual (see [exploratory testing](/standards/testing/runtime/exploratory), for example). But most of the work of a modern software developer is to write and maintain code that can be run over-and-over to test the software in a fully automated way.
+TODO: Define runtime testing versus static testing
+
+## Manual vs automated runtime testing
+
+In broad terms, runtime testing falls into two categories: manual and automated.
+
+It was once the case that software houses had to employ whole departments of software testers. But as the tools and techniques we use to make software have matured, much of this work can now be automated. Not all of it, some runtime testing techniques are still manual (see [exploratory testing](/standards/testing/runtime/exploratory), for example). But most of the work of a modern software developer is to write and maintain code that can be run over-and-over to test the software in a fully automated way.
 
 The benefits of automated over manual testing are profound. For example, by automating our runtime tests we can know when our software is broken in a matter of seconds and minutes, rather than days or weeks, and far fewer bugs hit production. Without automated runtime testing, the tight feedback loops that are a prerequisite of modern agile engineering operations would not exist. Automated testing allows us to move fast with confidence.
 
@@ -8,7 +14,7 @@ It goes without saying, that as much runtime testing as possible must be scripte
 
 The same principles of [clean code](/standards/programming/principles/keep-it-simple) apply for test code as for production code.
 
-# Pros and cons
+## Pros and cons
 
 The primary benefit of automated runtime testing is to ensure that new changes introduced to the code or configuration of a software system do not introduce unexpected regressions in the existing operations of the software.
 

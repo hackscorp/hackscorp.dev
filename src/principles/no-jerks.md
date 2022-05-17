@@ -1,5 +1,14 @@
 # No jerks
 
+<!--
+We will hire the best people we can.
+
+Our preference is for soft skills and culture fit, rather than technical expertise and experience.
+
+We want small teams of great engineers, rather than large teams of average ones.
+
+-->
+
 We are a company of technical experts, but our professional skill set is — perhaps surprisingly — _not_ the most important factor that drives our success.
 
 The manufacture of software systems is predominantly a creative, collaborative endeavour, rather than the engineering discipline it is widely categorized as.

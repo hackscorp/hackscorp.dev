@@ -14,3 +14,8 @@ Someone once uses the expression "code spent" rather than "code written". Isn't 
 
 If code can't be avoided, then it's quality must be good. Accidental complexity is one of the biggest cost factors. Accidental complexity is complexity that can be avoided. It occurs due to things like poor design, bad decisions, and not prioritizing and appropriate level of [simplicity](/principles/keep-it-simple) with the system.
 
+<!--
+
+The best engineers are at least 10x more productive than an average engineer. The best engineers do not write 10x faster. Rather, they make good decisions that save 10x the work in the long term. That's because good engineers design systems that are more robust and easier to understand by others. Other people can build upon their work much more quickly and reliably. And they will create fewer bugs and regressions. So, there is a **multiplier effect** over the lifetime of a product.
+
+-->

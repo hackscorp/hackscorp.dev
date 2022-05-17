@@ -11,3 +11,11 @@ At Hacks, we take a different view: we don't mind augmenting our code with _exte
 Of course, we should start by making our programs as self-documenting as possible. We can do this by using meaningful function names and descriptive identifiers, and organizing our logic in a clear structure that is easy for people to navigate.
 
 But well-written code on its own can only document _what_ the program does. It cannot tell you _why_ the developer chose to implement a piece of logic in the way they did. Comments are how we transfer the rest of our knowledge about our programs to other developers — the missing pieces of wisdom that are not explicit in the programs themselves.
+
+<!--
+
+Some comments are an invitation for refactoring. Comments should describe things that aren't obvious in the code, but first challenge the code, to see if you can refactor it to make it more obvious. But this isn't always possible, and comments are sometimes required.
+
+We would say: err on the side of more commentary rather than in less. Not sure if you should add a comment? Then add it, just in case. Comments add very little cognitive overhead, and they can be very easily refactored.
+
+-->
