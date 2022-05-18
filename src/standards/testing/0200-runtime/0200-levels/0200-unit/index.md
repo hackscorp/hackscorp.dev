@@ -20,4 +20,16 @@ The [Team Lead] will select the unit testing framework — including the test ru
 
 Reading and writing unit tests is an essential skill for software developers.
 
+----
+
+All code used in production is expected to have unit tests. Code review tools SHOULD be configured to highlight if source files are added without corresponding tests.
+
+Code reviewers usually require that any change which adds new functionality should also add new tests to cover the new functionality.
+
+Mocking frameworks (which allow construction of lightweight unit tests even for code with dependencies on heavyweight libraries) are quite popular.
+
+Testing MUST be enforced as part of the code review and commit/merge process.
+
+It is also strongly RECOMMENDED to use automated tools for measuring test coverage.
+
 -->

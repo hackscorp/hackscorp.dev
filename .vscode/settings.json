@@ -90,26 +90,6 @@
   // For example, "hte" should be "the".
   "cSpell.flagWords": [
     "hte"
-  ],
-
-  // Enable/disable VSCode's built-in JavaScript validation system.
-  "javascript.validate.enable": true,
-
-  // Enable the TypeScript type checker in all JavaScript files by default.
-  // This is equivalent to writing `@ts-check` in a comment at the top of all
-  // JavaScript files. JSDoc-style comments will be used to gather API
-  // information for the purpose of type checking.
-  //
-  // This setting will be ignored if this repository is opened within a wider
-  // VS Code workspace. Therefore, to ensure a consistent developer experience,
-  // it is RECOMMENDED that every JavaScript file have either the `@ts-check`
-  // or `@ts-nocheck` annotation to the top.
-  "js/ts.implicitProjectConfig.checkJs": false,
-
-  // Configuration for the ToDo Tree extension. We use only `TODO` notations.
-  // https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree
-  "todo-tree.general.tags": [
-    "TODO",
   ]
 
 }

@@ -34,4 +34,18 @@ There are the things to check in code review:
 - Simple and concise, but clarity over brevity
 - Comments explain the "why" not the "how"
 
+-----
+
+The author is free to choose reviewer(s) as they see fit. But reviewers are also free to re-assign to alternative (less busy) people, as they see fit.
+
+The review process is really about team ownership of the code. Once checked in, the whole team owns the code, not just the author.
+
+One potential issue with code review is that if the reviewers are too slow to respond or are overly reluctant to approve changes, this could potentially slow down development. That is why we are pretty flexible over who gets assigned to be a reviewer.
+
+Also, anyone is free to comment on any change, regardless of whether they were named as a reviewer of that change, both before and after the change is committed. If a bug is discovered, it's common to track down the change that introduced it and to comment on the original code review thread to point out the mistake, so that the original author and reviewers are aware of it.
+
+It is also possible to send code reviews to several reviewers, and then merge the change as soon as one of them has approved. Any subsequent comments may need to be dealt-with in follow-up changes. This can also help to reduce the turnaround time for reviews.
+
+Once an issue is closed, it should not be reopened. Better to open a new issue / PR.
+
 -->
