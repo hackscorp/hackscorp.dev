@@ -1,7 +1,4 @@
 {
-  // Transform tabs to two spaces.
-  "editor.tabSize": 2,
-
   // Render vertical rulers at 80 and 120 columns.
   //
   // Code lines and standard comments SHOULD be less than 80 characters long,
@@ -9,6 +6,9 @@
   // either case, these are not hard limits — some lines MAY be longer where
   // this is best for readability.
   "editor.rulers": [80, 120],
+
+  // Transform tabs to two spaces.
+  "editor.tabSize": 2,
 
   // Lines will wrap at the edge of the editor area.
   "editor.wordWrap": "on",
@@ -43,7 +43,6 @@
     "MD041": false,
   },
 
-
   // Spell check language. For consistency with our technical documentation,
   // we write in American English.
   "cSpell.language": "en-US",
@@ -63,11 +62,9 @@
 
   // A list of words to be considered correct spellings.
   "cSpell.words": [
-    "datatracker",
     "declutter",
     "dialog",
     "docblocks",
-    "Documentor",
     "filesystems",
     "hackscorp",
     "hacksinc",
@@ -75,6 +72,7 @@
     "parsable",
     "styleguide",
     "stylesheet",
+    "toolkits",
     "transcompilation",
     "transcompile",
     "transcompiler",
@@ -90,6 +88,12 @@
   // For example, "hte" should be "the".
   "cSpell.flagWords": [
     "hte"
+  ],
+
+  // Configuration for the ToDo Tree extension. We use only `TODO` notations.
+  // https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree
+  "todo-tree.general.tags": [
+    "TODO",
   ]
 
 }
