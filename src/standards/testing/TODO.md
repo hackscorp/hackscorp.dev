@@ -12,11 +12,9 @@ Test names should be concise, explicit, descriptive, and in correct English. Rea
 
 - **Avoid testing multiple concerns in the same test.** If a method has several end results, each one should be tested separately. Whenever a bug occurs, it will help if you locate the source of the problem. `AND`s and `OR`s in your test name should be considered a code smell.
 
-- **Dont' repeat yourself.** Just like production code, if you end up with clear duplication in your tests, consider ways of reducing it. Test factory functions are a great way of doing this.
+- **Don't repeat yourself.** Just like production code, if you end up with clear duplication in your tests, consider ways of reducing it. Test factory functions are a great way of doing this.
 
 -----
-
-----
 
 # TDD
 

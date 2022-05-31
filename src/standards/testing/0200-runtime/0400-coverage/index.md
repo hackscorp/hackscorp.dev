@@ -47,7 +47,9 @@ There are not really any disadvantages to generating code coverage metrics, only
 
 It is a case of diminishing returns. 100% coverage across-the-board rarely adds much more value than, say, 90%.
 
-Furthermore, some types of tests are more fragile than others. Low-level unit tests are often the most susceptible to breakages when implementations change, so as a general rule code coverage is more valuable at the higher levels of integration and end-to-end testing. On the other hand, in projects where the requirements are in a state of flux, in early-stage greenfield projects for instance, the costs of maintaining ever-changing system tests may be prohibitively high. If the time spent to fix/update broken tests starts to approach the time it would take to test the same stuff manually, then the value of automating the tests has been lost.
+Furthermore, some types of tests are more fragile than others. Low-level unit tests are often the most susceptible to breakages when implementations change, so as a general rule code coverage is more valuable at the higher levels of integration and end-to-end testing. Chasing coverage metrics at the unit level, by thoughtlessly writing tests for every class and every function, makes a system less brittle but also more rigid. Refactoring becomes harder, because there's more overall code (production plus test code) that needs to be changed.
+
+On the other hand, in projects where the requirements are in a state of flux, for instance in early-stage greenfield projects, the costs of maintaining ever-changing system tests may be prohibitively high. If the time spent to fix/update broken tests starts to approach the time it would take to test the same stuff manually, then the value of automating the tests has been lost.
 
 The goal is to achieve a _reasonable level_ of code coverage at each testing level. Achieving 100% code coverage SHOULD NOT be the goal. As a general rule, a coverage target of about 75% to 80% is good practice.
 
