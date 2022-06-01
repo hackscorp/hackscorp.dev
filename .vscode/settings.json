@@ -94,6 +94,21 @@
   // https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree
   "todo-tree.general.tags": [
     "TODO",
-  ]
+  ],
+
+  // Render line ending extension.
+  // https://marketplace.visualstudio.com/items?itemName=medo64.render-crlf
+
+  // haracter used to display LF (line-feed) line ending
+  // (aka Linux/Mac line ending).
+  "code-eol.newlineCharacter": "↓",
+
+  // Character used to display CR (carriage-return) line ending
+  // (aka old Macintosh line ending).
+  "code-eol.returnCharacter" : "←",
+
+  // Character used to display CRLF (carriage-return, line-feed) line ending
+  // (aka Windows line ending).
+  "code-eol.crlfCharacter"   : "↵",
 
 }
