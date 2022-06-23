@@ -21,11 +21,11 @@ The `@author` tag is required only if the authorship differs from the copyright 
 
 For privacy reasons, contact details such as email addresses MUST NOT be embedded in the values of these or any other docblock tags.
 
-OPTIONALLY copyright declarations may be dated, and multiple copyright holders may be listed using comma-separation.
+OPTIONALLY copyright declarations may be dated, and multiple copyright holders may be listed using comma-separation. It is RECOMMENDED to omit the date from copyright declarations for Hacks Ltd. This means we don't need to update copyright notices throughout all our code every year — a rather bothersome task.
 
 ```js
 /**
- * @copyright 2020 Hacks Ltd, 2006 NeverMind Ltd
+ * @copyright Hacks Ltd, 2006 NeverMind Ltd
  */
 ```
 

@@ -10,7 +10,7 @@ The first thing to do is check that JavaScript validation is enabled in your set
 }
 ```
 
-Even with JavaScript validation enabled, by default VS Code's intellisense tool does not parse docblocks in JS files to discover additional type information. To enable this, you have two options. The first option is to enable  JSDoc-based type checking on a file-by-file basis. This is done by adding the following comment to the very first line of each JavaScript file.
+Even with JavaScript validation enabled, by default VS Code's intellisense tool does not parse docblocks in JS files to discover additional type information. To enable this, you have two options. The first option is to enable JSDoc-based type checking on a file-by-file basis. This is done by adding the following comment to the very first line of each JavaScript file.
 
 ```js
 // @ts-check

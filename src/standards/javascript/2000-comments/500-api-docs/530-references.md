@@ -1,6 +1,6 @@
 # References
 
-Use the `@see` tag in conjunction with `@link` to create cross-references to external documentation. `@link` is an inline tag that can be used within block-level tags like `@see`, like this:
+Use the `@see` tag in conjunction with `@link` to create references to documentation and other related resources. Semantically, the `@see` tag [specifies a "see also" item](//github.com/microsoft/tsdoc/issues/235), while `@link` is used to created hyperlinks to other documents. `@link` is specified as an inline tag, which means it can be used within the content of block-level tags like `@see`. Like this:
 
 ```js
 /**
@@ -18,5 +18,3 @@ You can include multiple `@see` blocks in the same docblock. Optionally, links c
 ```
 
 Documentation references SHOULD be included in most file-level docblocks, and in any other docblocks for which there is relevant external documentation.
-
-Authors SHOULD NOT use the `@see` and `@link` tags, which have a different purpose in JSDoc/TSDoc.
