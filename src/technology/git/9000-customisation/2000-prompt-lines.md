@@ -16,7 +16,14 @@ The following instructions cover installation and configuration of Oh My Posh fo
 
 Except for the minimalist themes that don't render any icons, you will need to install a [Nerd Font](//ohmyposh.dev/docs/config-fonts). These fonts are extended with additional characters that are used in the prompt lint. Meslo LGN NF is recommended for use with Oh My Posh. Cascadia Code is another popular option. This font ships with Windows Terminal, but you will need to download and install [Cascadia Code PL](//github.com/microsoft/cascadia-code/releases), a version of the font that Microsoft has made with support for the Powerline glyphs.
 
-When you've installed the Nerd Font of your choice, set Windows Terminal to use it via the program's normal settings.
+When you've installed the Nerd Font of your choice, set Windows Terminal to use it via the program's normal settings. If you have PowerShell or Git Bash configured as the default profile for VSCode's integrated terminal, you will also need to enable the Nerd Font in VSCode's integrated terminal too, eg:
+
+```json
+{
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "terminal.integrated.fontFamily": "MesloLGM NF",
+}
+```
 
 Now follow the below instructions to install and configure Oh My Posh:
 
