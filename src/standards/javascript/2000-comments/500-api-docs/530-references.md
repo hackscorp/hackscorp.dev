@@ -12,8 +12,8 @@ You can include multiple `@see` blocks in the same docblock. Optionally, links c
 
 ```js
 /**
- * @see {@link https://nirvarnia.com/}
- * @see {@link https://daneden.github.io/animate.css/|Animate.css}
+ * @see {@link https://nirvarnia.com/ Project website}
+ * @see {@link https://daneden.github.io/animate.css/ Animate.css}
  */
 ```
 
