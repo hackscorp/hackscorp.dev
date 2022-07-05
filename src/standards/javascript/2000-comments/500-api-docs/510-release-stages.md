@@ -17,10 +17,10 @@ Where used, these tags SHOULD be positioned prominently near the top of a docblo
  *
  * @beta
  *
- * @param x - The first input number.
- * @param y - The second input number.
+ * @param x The first input number.
+ * @param y The second input number.
  * 
- * @returns - The mean of `x` and `y`.
+ * @returns The mean of `x` and `y`.
  */
 ```
 
@@ -28,7 +28,7 @@ For experimental and deprecated components, it is strongly RECOMMENDED you inclu
 
 ```js
 /**
- * @deprecated - This export will be removed in the next major release.
+ * @deprecated This export will be removed in the next major release.
  */
 ```
 

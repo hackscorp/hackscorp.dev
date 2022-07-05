@@ -4,7 +4,7 @@ It is possible to declare a `Function` type like this:
 
 ```js
 /** 
- * @type Function
+ * @type {Function}
  */
 const fn = (s, b) => {
   // ...

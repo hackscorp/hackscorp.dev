@@ -15,7 +15,7 @@ Construction parameters, if any, MUST be declared in a docblock attached to the 
 
 ```js
 /**
- * @param {number} data - Optional description.
+ * @param {number} data Optional description.
  */
 constructor (data) {
   // ...

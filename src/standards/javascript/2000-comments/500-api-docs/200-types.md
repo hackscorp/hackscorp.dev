@@ -4,16 +4,16 @@ Type information is provided via the `@type`, `@param` and `@returns` tags, with
 
 Types are written in curly braces. Examples:
 
-- `{string}` - A string value.
-- `{number}` - A number value.
-- `{boolean}` - True or false.
-- `{null}` - A null value.
-- `{42}` - The literal number primitive 42.
-- `{'close' | 'open'}` - One of the literal string values 'close' and 'open'.
-- `{string[]}` - An array of string values.
-- `{string[][]}` - A two-dimensional array of string values.
-- `{...string}` - A variable number of string arguments.
-- `{NirvarniaElement}` - A custom type.
+- `{string}`: A string value.
+- `{number}`: A number value.
+- `{boolean}`: True or false.
+- `{null}`: A null value.
+- `{42}`: The literal number primitive 42.
+- `{'close' | 'open'}`: One of the literal string values 'close' and 'open'.
+- `{string[]}`: An array of string values.
+- `{string[][]}`: A two-dimensional array of string values.
+- `{...string}`: A variable number of string arguments.
+- `{NirvarniaElement}`: A custom type.
 
 JavaScript's primitive types are written full lower case:
 

@@ -34,9 +34,9 @@ A function or class may make use of multiple templates. Multiple templates can b
 
 ```js
 /**
- * @template T - Optional description.
- * @template U - Optional description.
- * @template V - Optional description.
+ * @template T Optional description.
+ * @template U Optional description.
+ * @template V Optional description.
  */
 ```
 
